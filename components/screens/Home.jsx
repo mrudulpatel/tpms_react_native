@@ -17,6 +17,11 @@ const Home = ({ navigation }) => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
+  useEffect(() => {
+    setEmpid("");
+    setPassword("");
+  }, []);
+
   // useFocusEffect(() => {
   //   const getEmpData = async () => {
   //     try {
@@ -157,6 +162,7 @@ const Home = ({ navigation }) => {
           />
           <TouchableOpacity
             onPress={handleLogin}
+            disabled={empid === "" || password === "" ? true : false}
             style={{
               backgroundColor: "#4CBB17",
               borderRadius: 5,
@@ -171,7 +177,7 @@ const Home = ({ navigation }) => {
             )}
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => navigation.navigate("ForgotPassword")}
+            onPress={() => navigation.navigate("Forgot Password")}
             style={{
               backgroundColor: "#C80000",
               borderRadius: 5,

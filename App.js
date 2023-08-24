@@ -14,6 +14,7 @@ import Dashboard from "./components/screens/Dashboard";
 import Profile from "./components/screens/Profile";
 import ResetPassword from "./components/screens/ResetPassword";
 import Logout from "./components/screens/Logout";
+import ForgotPassword from "./components/screens/ForgotPassword";
 import { StatusBar } from "react-native";
 
 const App = () => {
@@ -64,7 +65,7 @@ const App = () => {
         <Drawer.Screen
           name="Home"
           component={Home}
-          options={{ drawerItemStyle: { display: "none" } }}
+          options={{ headerShown: false, drawerItemStyle: { display: "none" } }}
         />
         <Drawer.Screen
           name="Profile"
@@ -89,6 +90,19 @@ const App = () => {
             drawerActiveBackgroundColor: "#1F2937",
             headerTitleStyle: { fontWeight: "bold" },
             headerTitle: "Reset Password",
+          }}
+        />
+        <Drawer.Screen
+          name="Forgot Password"
+          component={ForgotPassword}
+          options={{
+            drawerItemStyle: { display: "none" },
+            headerShown: false,
+            headerStyle: { backgroundColor: "#111827" },
+            headerTintColor: "#fff",
+            drawerActiveBackgroundColor: "#1F2937",
+            headerTitleStyle: { fontWeight: "bold" },
+            headerTitle: "Forgot Password",
           }}
         />
         <Drawer.Screen
